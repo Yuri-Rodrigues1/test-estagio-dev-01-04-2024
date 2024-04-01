@@ -1,9 +1,9 @@
 from django.contrib import admin
 from django.urls import path
-from calculator.views import index, calculate_consumption
+from calculator.views import index, calcularConsumo
 
 urlpatterns = [
     path("admin/", admin.site.urls),
-    path('', index, name='index'),  # Adiciona esta rota para a view 'index'
-    path('form/', calculate_consumption, name='form'),  # Altera a rota para apontar para a view 'calculate_consumption'
+    path('', index, name='index'), 
+    path('form/', calcularConsumo, name='form'),  
 ]

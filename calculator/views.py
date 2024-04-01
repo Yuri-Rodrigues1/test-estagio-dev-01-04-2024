@@ -37,7 +37,7 @@ def index(request):
     return render(request, 'calculator/index.html')
 
 
-def calculate_consumption(request):
+def calcularConsumo(request):
     if request.method == 'POST':
         consumo1 = float(request.POST.get('consumo1', 0))
         consumo2 = float(request.POST.get('consumo2', 0))
