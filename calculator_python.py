@@ -1,21 +1,50 @@
-def calculator(consumption: list, distributor_tax: float, tax_type: str) -> tuple:
-    """
-    returns a tuple of floats contained anual savings, monthly savings, applied_discount and coverage
-    """
-    annual_savings = 0
-    monthly_savings = 0
-    applied_discount = 0
-    coverage = 0
+def calculandoDesconto(consumoMedio, tipoTarifa):
+    if tipoTarifa == 'Residencial':
+        if consumoMedio < 10000:
+            return 0.18
+        elif 10000 <= consumoMedio <= 20000:
+            return 0.22
+        else:
+            return 0.25
+    elif tipoTarifa == 'Comercial':
+        if consumoMedio < 10000:
+            return 0.16
+        elif 10000 <= consumoMedio <= 20000:
+            return 0.18
+        else:
+            return 0.22
+    elif tipoTarifa == 'Industrial':
+        if consumoMedio < 10000:
+            return 0.12
+        elif 10000 <= consumoMedio <= 20000:
+            return 0.15
+        else:
+            return 0.18
+    else:
+        return 0.0
 
-    # your code here #
+def calculandoCobertura(consumoMedio):
+    if consumoMedio < 10000:
+        return 0.9
+    elif 10000 <= consumoMedio <= 20000:
+        return 0.95
+    else:
+        return 0.99
+
+def calculator(consumo, tarifa, tipoTarifa):
+    consumoMedio = sum(consumo) / len(consumo)
+    
+    desconto = calculandoDesconto(consumoMedio, tipoTarifa)
+    cobertura = calculandoCobertura(consumoMedio)
+    economiaAnual = sum(consumo) * (1 - desconto) * tarifa * 12
+    economiaMensal = economiaAnual / 12
 
     return (
-        round(annual_savings, 2),
-        round(monthly_savings, 2),
-        applied_discount,
-        coverage,
+        round(economiaAnual, 2),
+        round(economiaMensal, 2),
+        desconto,
+        cobertura,
     )
-
 
 if __name__ == "__main__":
     print("Testing...")
