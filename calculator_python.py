@@ -1,3 +1,5 @@
+from calculator.models import Pessoa, RegraDesconto
+
 def calculandoDesconto(consumoMedio, tipoTarifa):
     if tipoTarifa == 'Residencial':
         if consumoMedio < 10000:

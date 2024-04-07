@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Listar Consumidores e Economia</title>
+</head>
+<body>
+    <h1>Consumidores e Economia Calculada</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th>Documento</th>
+                <th>Cidade</th>
+                <th>Estado</th>
+                <th>Economia Anual</th>
+                <th>Economia Mensal</th>
+                <th>Desconto</th>
+                <th>Cobertura</th>
+            </tr>
+        </thead>
+        <tbody>
+          {% for consumidor in consumidores %}
+          <tr>
+              <td>{{ consumidor.nome }}</td>
+              <td>{{ consumidor.documento }}</td>
+              <td>{{ consumidor.cidade }}</td>
+              <td>{{ consumidor.estado }}</td>
+              <td>{{ consumidor.economia_anual }}</td>
+              <td>{{ consumidor.economia_mensal }}</td>
+              <td>{{ consumidor.desconto }}</td>
+              <td>{{ consumidor.cobertura }}</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>

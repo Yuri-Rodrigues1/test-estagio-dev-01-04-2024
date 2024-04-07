@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Print de Nomes</title>
+</head>
+<body>
+    <h1>Nomes:</h1>
+    <ul>
+        {% for pessoa in nomes %}
+            <li>{{ pessoa.nome }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

@@ -64,13 +64,13 @@ WSGI_APPLICATION = "core.wsgi.application"
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
 DATABASES = {
-    "default": {
-        "ENGINE": "django.db.backends.sqlite3",
-        "NAME": "calculadora_consumo",
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'consumidores',
         'USER': 'root',
         'PASSWORD': '123456',
         'HOST': 'localhost',
-        'PORT': '8001',
+        'PORT': '3306',
     }
 }
 
